@@ -28,7 +28,7 @@ describe('new Strand()', () => {
         expect(actual).to.equal(undefined)
       })
     })
-    describe('.append(stitch)', () => {
+    describe('.stitch(stitch)', () => {
       it("returns the hash of the object", async () => {
         // given
         const stitch = { type: 'knot', v: 0 }
