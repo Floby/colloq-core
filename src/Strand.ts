@@ -12,6 +12,10 @@ export default class Strand {
     return this.#needle
   }
 
+  get (id: StitchId): Stitch | void {
+    return this.#stitches.get(id)
+  }
+
   stitch (content: Stitch): StitchId {
     const stitch = {
       ...content,
@@ -21,10 +25,6 @@ export default class Strand {
     this.#stitches.set(id, stitch)
     this.#needle = id
     return id
-  }
-
-  get (id: StitchId): Stitch | void {
-    return this.#stitches.get(id)
   }
 
   async *walk (from?: StitchId, limit: number=Infinity, until?: StitchId): AsyncGenerator<Stitch> {
